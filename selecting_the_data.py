@@ -39,7 +39,7 @@ data_df = data_df[data_df['cleaned_jd'] != chosen_jd_text]
 
 # Vectorizing the resumes using TF-IDF
 vectorizer = TfidfVectorizer(stop_words='english', max_features=1000)
-all_resume_texts = data_df["clean_resume"].tolist()
+all_resume_texts = data_df["cleaned_resume"].tolist()
 tfidf_matrix = vectorizer.fit_transform(all_resume_texts + [chosen_jd_text])
 
 # Calculating the cosine similarity of the resumes with the chosen JD.
@@ -53,7 +53,7 @@ selected_resume_indices = []
 seen_resumes = set()
 
 for idx in sorted_indices:
-    this_resume = data_df.iloc[idx]["clean_resume"]
+    this_resume = data_df.iloc[idx]["cleaned_resume"]
     if this_resume not in seen_resumes:
         seen_resumes.add(this_resume)
         selected_resume_indices.append(idx)
