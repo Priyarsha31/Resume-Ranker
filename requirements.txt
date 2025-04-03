@@ -1,0 +1,10 @@
+pandas
+numpy
+scikit-learn
+sentence-transformers
+spacy
+torch
+dateparser
+requests
+datasets
+tqdm
